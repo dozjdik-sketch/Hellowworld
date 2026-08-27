@@ -1,89 +1,178 @@
 public class Main {
     public static void main(String[] args) {
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper = 763789;
 
-        // Задача 2: увеличиваем на 4
-        dog = dog + 4;
-        cat = cat + 4;
-        paper = paper + 4;
+        // Задача 1
+        int intNumber = 100;
+        byte byteNumber = 10;
+        short shortNumber = 1000;
+        long longNumber = 9876543210L;
+        float floatNumber = 27.12f;
+        double doubleNumber = 2.786;
 
-        System.out.println("Вывод для задачи 2:");
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
+        System.out.println("\nЗадача 1:");
+        System.out.println("Значение переменной intNumber с типом int равно " + intNumber);
+        System.out.println("Значение переменной byteNumber с типом byte равно " + byteNumber);
+        System.out.println("Значение переменной shortNumber с типом short равно " + shortNumber);
+        System.out.println("Значение переменной longNumber с типом long равно " + longNumber);
+        System.out.println("Значение переменной floatNumber с типом float равно " + floatNumber);
+        System.out.println("Значение переменной doubleNumber с типом double равно " + doubleNumber);
 
-        // Задача 3: уменьшаем
-        dog = dog - 3.5;
-        cat = cat - 1.6;
-        paper = paper - 7639;
+        // Задача 2
+        double value1 = 27.12;
+        long value2 = 987678965549L;
+        float value3 = 2.786f;
+        int value4 = 569;
+        int value5 = -159;
+        int value6 = 27897;
+        byte value7 = 67;
 
-        System.out.println("Вывод для задачи 3:");
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
+        System.out.println("\nЗадача 2:");
+        System.out.println(value1);
+        System.out.println(value2);
+        System.out.println(value3);
+        System.out.println(value4);
+        System.out.println(value5);
+        System.out.println(value6);
+        System.out.println(value7);
+
+        // Задача 3
+        int studentsInFirstClass = 23;
+        int studentsInSecondClass = 27;
+        int studentsInThirdClass = 30;
+        int totalPaper = 480;
+
+        int totalStudents = studentsInFirstClass
+                + studentsInSecondClass
+                + studentsInThirdClass;
+
+        int paperPerStudent = totalPaper / totalStudents;
+
+        System.out.println("\nЗадача 3:");
+        System.out.println("На каждого ученика рассчитано "
+                + paperPerStudent + " листов бумаги");
 
         // Задача 4
-        var friend = 19;
-        System.out.println("Задача 4, начальное friend:");
-        System.out.println(friend);
+        int bottlesPerTwoMinutes = 16;
+        int minutesInTwoMinutes = 2;
+        int bottlesPerMinute = bottlesPerTwoMinutes / minutesInTwoMinutes;
 
-        friend = friend + 2;
-        System.out.println("Задача 4, после +2:");
-        System.out.println(friend);
+        int bottlesInTwentyMinutes = bottlesPerMinute * 20;
+        int bottlesInDay = bottlesPerMinute * 60 * 24;
+        int bottlesInThreeDays = bottlesInDay * 3;
+        int bottlesInMonth = bottlesInDay * 30;
 
-        friend = friend / 7;
-        System.out.println("Задача 4, после /7:");
-        System.out.println(friend);
+        System.out.println("\nЗадача 4:");
+        System.out.println("За 20 минут машина произвела "
+                + bottlesInTwentyMinutes + " штук бутылок");
+        System.out.println("За сутки машина произвела "
+                + bottlesInDay + " штук бутылок");
+        System.out.println("За 3 дня машина произвела "
+                + bottlesInThreeDays + " штук бутылок");
+        System.out.println("За 1 месяц машина произвела "
+                + bottlesInMonth + " штук бутылок");
 
         // Задача 5
-        var frog = 3.5;
-        System.out.println("Задача 5, начальное frog:");
-        System.out.println(frog);
+        int totalPaintCans = 120;
+        int whitePaintPerClass = 2;
+        int brownPaintPerClass = 4;
+        int paintPerClass = whitePaintPerClass + brownPaintPerClass;
 
-        frog = frog * 10;
-        System.out.println("Задача 5, после *10:");
-        System.out.println(frog);
+        int numberOfClasses = totalPaintCans / paintPerClass;
+        int totalWhitePaint = numberOfClasses * whitePaintPerClass;
+        int totalBrownPaint = numberOfClasses * brownPaintPerClass;
 
-        frog = frog / 3.5;
-        System.out.println("Задача 5, после /3.5:");
-        System.out.println(frog);
-
-        frog = frog + 4;
-        System.out.println("Задача 5, после +4:");
-        System.out.println(frog);
+        System.out.println("\nЗадача 5:");
+        System.out.println("В школе, где " + numberOfClasses
+                + " классов, нужно " + totalWhitePaint
+                + " банок белой краски и " + totalBrownPaint
+                + " банок коричневой краски");
 
         // Задача 6
-        var boxer1 = 78.2;
-        var boxer2 = 82.7;
+        int bananas = 5;
+        int gramsPerBanana = 80;
 
-        var totalWeight = boxer1 + boxer2;
-        var diffWeight = boxer2 - boxer1; // или Math.abs(boxer2 - boxer1)
+        int milkMilliliters = 200;
+        int gramsPer100MillilitersMilk = 105;
+        int milkWeight = milkMilliliters / 100 * gramsPer100MillilitersMilk;
 
-        System.out.println("Задача 6, общая масса:");
-        System.out.println(totalWeight);
+        int iceCreamBricks = 2;
+        int gramsPerIceCreamBrick = 100;
 
-        System.out.println("Задача 6, разница масс:");
-        System.out.println(diffWeight);
+        int eggs = 4;
+        int gramsPerEgg = 70;
+
+        int breakfastWeightInGrams =
+                bananas * gramsPerBanana
+                        + milkWeight
+                        + iceCreamBricks * gramsPerIceCreamBrick
+                        + eggs * gramsPerEgg;
+
+        double breakfastWeightInKilograms =
+                breakfastWeightInGrams / 1000.0;
+
+        System.out.println("\nЗадача 6:");
+        System.out.println("Вес спортзавтрака: "
+                + breakfastWeightInGrams + " грамм");
+        System.out.println("Вес спортзавтрака: "
+                + breakfastWeightInKilograms + " килограмма");
 
         // Задача 7
-        var remainder = boxer2 % boxer1;
+        int weightToLoseInKilograms = 7;
+        int weightToLoseInGrams = weightToLoseInKilograms * 1000;
 
-        System.out.println("Задача 7, остаток от деления:");
-        System.out.println(remainder);
+        int minimumLossPerDay = 250;
+        int maximumLossPerDay = 500;
+
+        int daysAt250Grams = weightToLoseInGrams / minimumLossPerDay;
+        int daysAt500Grams = weightToLoseInGrams / maximumLossPerDay;
+
+        double averageLossPerDay =
+                (minimumLossPerDay + maximumLossPerDay) / 2.0;
+
+        double averageDays =
+                weightToLoseInGrams / averageLossPerDay;
+
+        System.out.println("\nЗадача 7:");
+        System.out.println("Если спортсмен теряет по 250 грамм в день, "
+                + "ему потребуется " + daysAt250Grams + " дней");
+        System.out.println("Если спортсмен теряет по 500 грамм в день, "
+                + "ему потребуется " + daysAt500Grams + " дней");
+        System.out.printf("В среднем потребуется примерно %.1f дней%n",
+                averageDays);
 
         // Задача 8
-        var totalHours = 640;
-        var hoursPerEmployee = 8;
+        int salaryMasha = 67760;
+        int salaryDenis = 83690;
+        int salaryKristina = 76230;
 
-        var employees = totalHours / hoursPerEmployee;
-        System.out.println("Всего работников в компании — " + employees + " человек");
+        double salaryMashaAfterRaise = salaryMasha * 1.10;
+        double salaryDenisAfterRaise = salaryDenis * 1.10;
+        double salaryKristinaAfterRaise = salaryKristina * 1.10;
 
-        var moreEmployees = employees + 94;
-        var totalHoursForMore = moreEmployees * hoursPerEmployee;
+        double annualDifferenceMasha =
+                (salaryMashaAfterRaise - salaryMasha) * 12;
+        double annualDifferenceDenis =
+                (salaryDenisAfterRaise - salaryDenis) * 12;
+        double annualDifferenceKristina =
+                (salaryKristinaAfterRaise - salaryKristina) * 12;
 
-        System.out.println("Если в компании работает " + moreEmployees + " человек, то всего "
-                + totalHoursForMore + " часов работы может быть поделено между сотрудниками");
+        System.out.println("\nЗадача 8:");
+        System.out.printf(
+                "Маша теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей%n",
+                salaryMashaAfterRaise,
+                annualDifferenceMasha
+        );
+
+        System.out.printf(
+                "Денис теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей%n",
+                salaryDenisAfterRaise,
+                annualDifferenceDenis
+        );
+
+        System.out.printf(
+                "Кристина теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей%n",
+                salaryKristinaAfterRaise,
+                annualDifferenceKristina
+        );
     }
 }
