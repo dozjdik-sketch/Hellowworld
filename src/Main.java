@@ -1,71 +1,150 @@
 public class Main {
     public static void main(String[] args) {
 
-        // Задача 1
-        System.out.println("Задача 1:");
-        for (int i = 1; i <= 10; i = i + 1) {
-            System.out.println(i);
+        // Задание 1
+        System.out.println("Задание 1:");
+
+        int firstFriday = 4;
+
+        for (int day = 1; day <= 31; day = day + 1) {
+            if (day >= firstFriday && (day - firstFriday) % 7 == 0) {
+                System.out.println(
+                        "Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет"
+                );
+            }
         }
 
-        // Задача 2
-        System.out.println("\nЗадача 2:");
-        for (int i = 10; i >= 1; i = i - 1) {
-            System.out.println(i);
+
+        // Задание 2
+        System.out.println("\nЗадание 2:");
+
+        int distance = 0;
+
+        do {
+            System.out.println("Держитесь! Осталось " + (42195 - distance) + " метров");
+            distance = distance + 500;
+        } while (distance <= 42195);
+
+        System.out.println("\nВторая версия с циклом for:");
+
+        for (int distanceFor = 0;
+             distanceFor <= 42195;
+             distanceFor = distanceFor + 500) {
+
+            System.out.println(
+                    "Держитесь! Осталось " + (42195 - distanceFor) + " метров"
+            );
         }
 
-        // Задача 3
-        System.out.println("\nЗадача 3:");
-        for (int i = 0; i <= 17; i = i + 2) {
-            System.out.println(i);
+
+        // Задание 3
+        System.out.println("\nЗадание 3:");
+
+        int budget = 1000;
+        int day = 1;
+        int daysWithWhile = 0;
+
+        while (budget > 0) {
+            if (day % 5 == 0) {
+                daysWithWhile = day;
+                day = day + 1;
+                continue;
+            }
+
+            budget = budget - 100;
+            daysWithWhile = day;
+            day = day + 1;
         }
 
-        // Задача 4
-        System.out.println("\nЗадача 4:");
-        for (int i = 10; i >= -10; i = i - 1) {
-            System.out.println(i);
+        System.out.println("С использованием while бюджет закончится на "
+                + daysWithWhile + "-й день.");
+
+        int budgetFor = 1000;
+        int daysWithFor = 0;
+
+        for (int dayFor = 1; budgetFor > 0; dayFor = dayFor + 1) {
+            if (dayFor % 5 == 0) {
+                daysWithFor = dayFor;
+                continue;
+            }
+
+            budgetFor = budgetFor - 100;
+            daysWithFor = dayFor;
         }
 
-        // Задача 5
-        System.out.println("\nЗадача 5:");
-        for (int year = 1904; year <= 2096; year = year + 4) {
-            System.out.println(year + " год является високосным");
+        System.out.println("С использованием for бюджет закончится на "
+                + daysWithFor + "-й день.");
+
+
+        // Задание 4
+        System.out.println("\nЗадание 4:");
+
+        int month = 0;
+        int total = 0;
+
+        while (true) {
+            month = month + 1;
+            total = total + 15000;
+
+            if (month % 6 == 0) {
+                total = total + total * 7 / 100;
+            }
+
+            System.out.println(
+                    "Месяц " + month + ", сумма накоплений равна " + total + " рублей"
+            );
+
+            if (total >= 12000000) {
+                break;
+            }
         }
 
-        // Задача 6
-        System.out.println("\nЗадача 6:");
-        for (int i = 7; i <= 98; i = i + 7) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
+        System.out.println("Всего месяцев понадобится: " + month);
 
-        // Задача 7
-        System.out.println("\nЗадача 7:");
-        for (int i = 1; i <= 512; i = i * 2) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
 
-        // Задача 8
-        System.out.println("\nЗадача 8:");
-        int savings = 0;
-        for (int month = 1; month <= 12; month = month + 1) {
-            savings = savings + 29000;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + savings + " рублей");
+        // Задание 5
+        System.out.println("\nЗадание 5:");
+
+        int charge = 20;
+        int minute = 0;
+        int overheats = 0;
+
+        while (charge < 100 && overheats < 3) {
+            minute = minute + 1;
+
+            if (minute % 10 == 0) {
+                overheats = overheats + 1;
+
+                System.out.println(
+                        "Перегрев №" + overheats
+                                + ". Зарядка прервана на 2 минуты."
+                );
+
+                minute = minute + 2;
+
+                if (overheats == 3) {
+                    System.out.println(
+                            "Зарядка прекращена. Текущий заряд: " + charge + "%"
+                    );
+                    break;
+                }
+
+                continue;
+            }
+
+            charge = charge + 2;
+
+            if (charge > 100) {
+                charge = 100;
+            }
         }
 
-        // Задача 9
-        System.out.println("\nЗадача 9:");
-        int bankSavings = 0;
-        for (int month = 1; month <= 12; month = month + 1) {
-            bankSavings = bankSavings + bankSavings / 100;
-            bankSavings = bankSavings + 29000;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + bankSavings + " рублей");
+        if (charge == 100) {
+            System.out.println(
+                    "Зарядка завершена. Текущий заряд: " + charge + "%"
+            );
         }
 
-        // Задача 10
-        System.out.println("\nЗадача 10:");
-        for (int i = 1; i <= 10; i = i + 1) {
-            System.out.println("2*" + i + "=" + (2 * i));
-        }
+        System.out.println("Время зарядки составило " + minute + " минут.");
     }
 }
