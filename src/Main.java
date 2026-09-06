@@ -1,95 +1,209 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
 
         // Задача 1
+        System.out.println("Задача 1:");
 
-        // Целочисленный массив, созданный с помощью new
-        int[] numbers = new int[3];
+        int[] inputArray1 = new int[5];
 
-        numbers[0] = 1;
-        numbers[1] = 2;
-        numbers[2] = 3;
+        inputArray1[0] = 10000;
+        inputArray1[1] = 25000;
+        inputArray1[2] = 18000;
+        inputArray1[3] = 32000;
+        inputArray1[4] = 15000;
 
-        // Массив дробных чисел, сразу заполненный значениями
-        double[] decimalNumbers = {1.57, 7.654, 9.986};
+        float[] outputArray1 = new float[4];
 
-        // Произвольный массив
-        String[] words = {"Java", "массив", "обучение"};
+        int sum = 0;
+        int maximum = inputArray1[0];
+        int minimum = inputArray1[0];
+
+        for (int payment : inputArray1) {
+            sum = sum + payment;
+
+            if (payment > maximum) {
+                maximum = payment;
+            }
+
+            if (payment < minimum) {
+                minimum = payment;
+            }
+        }
+
+        float average = (float) sum / inputArray1.length;
+
+        outputArray1[0] = sum;
+        outputArray1[1] = maximum;
+        outputArray1[2] = minimum;
+        outputArray1[3] = average;
+
+        System.out.println("inputArray1:");
+
+        for (int element : inputArray1) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+
+        System.out.println("outputArray1:");
+
+        for (float element : outputArray1) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
 
 
         // Задача 2
-        System.out.println("Задача 2:");
+        System.out.println("\nЗадача 2:");
 
-        for (int i = 0; i < numbers.length; i = i + 1) {
-            System.out.print(numbers[i]);
+        int[] inputArray2 = new int[5];
 
-            if (i < numbers.length - 1) {
-                System.out.print(", ");
-            }
+        inputArray2[0] = 30000;
+        inputArray2[1] = 45000;
+        inputArray2[2] = 52000;
+        inputArray2[3] = 28000;
+        inputArray2[4] = 60000;
+
+        float[] outputArray2 = new float[inputArray2.length];
+
+        int index = 0;
+
+        for (int salary : inputArray2) {
+            outputArray2[index] = salary * 0.13f;
+            index = index + 1;
         }
+
+        System.out.println("inputArray2:");
+
+        for (int element : inputArray2) {
+            System.out.print(element + " ");
+        }
+
         System.out.println();
 
-        for (int i = 0; i < decimalNumbers.length; i = i + 1) {
-            System.out.print(decimalNumbers[i]);
+        System.out.println("outputArray2:");
 
-            if (i < decimalNumbers.length - 1) {
-                System.out.print(", ");
-            }
+        for (float element : outputArray2) {
+            System.out.print(element + " ");
         }
-        System.out.println();
 
-        for (int i = 0; i < words.length; i = i + 1) {
-            System.out.print(words[i]);
-
-            if (i < words.length - 1) {
-                System.out.print(", ");
-            }
-        }
         System.out.println();
 
 
         // Задача 3
         System.out.println("\nЗадача 3:");
 
-        for (int i = numbers.length - 1; i >= 0; i = i - 1) {
-            System.out.print(numbers[i]);
+        int[] inputArray3 = new int[5];
 
-            if (i > 0) {
-                System.out.print(", ");
-            }
+        inputArray3[0] = 3500;
+        inputArray3[1] = 7500;
+        inputArray3[2] = 4200;
+        inputArray3[3] = 10000;
+        inputArray3[4] = 5000;
+
+        boolean[] outputArray3 = new boolean[inputArray3.length];
+
+        index = 0;
+
+        for (int bonus : inputArray3) {
+            outputArray3[index] = bonus > 5000;
+            index = index + 1;
         }
+
+        System.out.println("inputArray3:");
+
+        for (int element : inputArray3) {
+            System.out.print(element + " ");
+        }
+
         System.out.println();
 
-        for (int i = decimalNumbers.length - 1; i >= 0; i = i - 1) {
-            System.out.print(decimalNumbers[i]);
+        System.out.println("outputArray3:");
 
-            if (i > 0) {
-                System.out.print(", ");
-            }
+        for (boolean element : outputArray3) {
+            System.out.print(element + " ");
         }
-        System.out.println();
 
-        for (int i = words.length - 1; i >= 0; i = i - 1) {
-            System.out.print(words[i]);
-
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
         System.out.println();
 
 
         // Задача 4
         System.out.println("\nЗадача 4:");
 
-        for (int i = 0; i < numbers.length; i = i + 1) {
-            if (numbers[i] % 2 != 0) {
-                numbers[i] = numbers[i] + 1;
+        int[] inputArray4 = new int[5];
+
+        inputArray4[0] = 15000;
+        inputArray4[1] = 12000;
+        inputArray4[2] = 8000;
+        inputArray4[3] = 5000;
+        inputArray4[4] = 3000;
+
+        boolean[] outputArray4 = new boolean[1];
+
+        outputArray4[0] = true;
+
+        for (int balance : inputArray4) {
+            if (balance < 0) {
+                outputArray4[0] = false;
+                break;
             }
         }
 
-        System.out.println(Arrays.toString(numbers));
+        System.out.println("inputArray4:");
+
+        for (int element : inputArray4) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+
+        System.out.println("outputArray4:");
+
+        for (boolean element : outputArray4) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+
+
+        // Задача 5
+        System.out.println("\nЗадача 5:");
+
+        int[] inputArray5 = new int[5];
+
+        inputArray5[0] = 150000;
+        inputArray5[1] = -20000;
+        inputArray5[2] = 75000;
+        inputArray5[3] = 0;
+        inputArray5[4] = 120000;
+
+        int[] outputArray5 = new int[1];
+
+        int profitableMonths = 0;
+
+        for (int profit : inputArray5) {
+            if (profit > 0) {
+                profitableMonths = profitableMonths + 1;
+            }
+        }
+
+        outputArray5[0] = profitableMonths;
+
+        System.out.println("inputArray5:");
+
+        for (int element : inputArray5) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+
+        System.out.println("outputArray5:");
+
+        for (int element : outputArray5) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
     }
 }
